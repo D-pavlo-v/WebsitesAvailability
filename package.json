@@ -1,0 +1,22 @@
+{
+  "name": "website-availability-monitoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "IBS Dunice",
+  "license": "IBS",
+  "dependencies": {
+    "@google-cloud/datastore": "^5.1.0",
+    "axios": "^0.19.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.1",
+    "nodemailer": "^6.9.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
