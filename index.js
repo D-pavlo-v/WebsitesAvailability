@@ -15,7 +15,7 @@ const URLS_TO_CHECK = [
 const SENDER = 'd.pavlov@dunice.net';
 
 // IBS Dunice recepients...
-const RECEPIENTS = [
+const RECIPIENTS = [
   'glupiymozg1234567890@gmail.com',
   'a.muraviov@dunice.net',
   'mikhail@dunice.net',
@@ -36,14 +36,6 @@ const mailTransporter = nodemailer.createTransport({
   },
 });
 
-const mailOptions = {
-  from: 'd.pavlov@dunice.net',
-  to: 'glupiymozg1234567890@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
-
-return;
 const insertVisit = (visit) => {
   return datastore.save({
     key: datastore.key('visit'),
@@ -62,7 +54,7 @@ const getVisits = () => {
 
 const reportError = (error, service) => {
 
-  const mailOptions = RECEPIENTS.map((recepient) => {
+  const mailOptions = RECIPIENTS.map((recepient) => {
     return {
       from: SENDER,
       to: recepient,
@@ -123,7 +115,7 @@ app.get('/test', async (req, response, next) => {
         .then((response) => {
           visit = {
             timestamp: new Date(),
-            responseDuration: response.duration,
+            responseDuration: response?.duration,
             successful: true
           };
         })
